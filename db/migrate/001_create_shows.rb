@@ -7,3 +7,4 @@ class CreateShows < ActiveRecord::Migration[4.2]
       t.integer :rating
     end
   end
+end
