@@ -1,0 +1,79 @@
+
+Show
+  attributes
+    has data attributes given to it from a migration file
+    has a season
+    has a season column and attribute added from another migration file
+  ::highest_rating
+    returns the TV show with the highest rating
+  ::most_popular_show
+    returns the tv show with the highest rating (FAILED - 1)
+  ::lowest_rating
+    returns the TV show with the lowest rating
+  ::least_popular_show
+    returns the tv show with the lowest rating (FAILED - 2)
+  ::ratings_sum
+    returns the sum of all the ratings of all the tv shows (FAILED - 3)
+  ::popular_shows
+    returns an array of all of the shows with a rating above 5 (FAILED - 4)
+  ::shows_by_alphabetical_order
+    returns an array of all of the shows, listed in alphabetical order (FAILED - 5)
+
+Failures:
+
+  1) Show::most_popular_show returns the tv show with the highest rating
+     Failure/Error: expect(Show.most_popular_show).to eq(@rick_and_morty)
+       
+       expected: #<Show id: 18, name: "Rick and Morty", network: "Adult Swim", day: "Thursday", rating: 10, season: nil>
+            got: 10
+       
+       (compared using ==)
+     # ./spec/show_spec.rb:45:in `block (3 levels) in <top (required)>'
+
+  2) Show::least_popular_show returns the tv show with the lowest rating
+     Failure/Error: expect(Show.least_popular_show).to eq(@the_cleveland_show)
+       
+       expected: #<Show id: 28, name: "The Cleveland Show", network: "Fox", day: "Monday", rating: 2, season: nil>
+            got: 2
+       
+       (compared using ==)
+     # ./spec/show_spec.rb:57:in `block (3 levels) in <top (required)>'
+
+  3) Show::ratings_sum returns the sum of all the ratings of all the tv shows
+     Failure/Error: expect(Show.ratings_sum).to eq(22)
+       
+       expected: 22
+            got: nil
+       
+       (compared using ==)
+     # ./spec/show_spec.rb:63:in `block (3 levels) in <top (required)>'
+
+  4) Show::popular_shows returns an array of all of the shows with a rating above 5
+     Failure/Error: expect(Show.popular_shows).to eq([@rick_and_morty, @law_and_order])
+       
+       expected: [#<Show id: 34, name: "Rick and Morty", network: "Adult Swim", day: "Thursday", rating: 10, season: nil>, #<Show id: 35, name: "Law & Order", network: "NBC", day: "Monday", rating: 7, season: nil>]
+            got: nil
+       
+       (compared using ==)
+     # ./spec/show_spec.rb:69:in `block (3 levels) in <top (required)>'
+
+  5) Show::shows_by_alphabetical_order returns an array of all of the shows, listed in alphabetical order
+     Failure/Error: expect(Show.shows_by_alphabetical_order).to eq([@fear_the_walking_dead, @law_and_order, @rick_and_morty, @the_cleveland_show])
+       
+       expected: [#<Show id: 41, name: "Fear the Walking Dead", network: "AMC", day: "Sunday", rating: 3, season: nil>, #<Show id: 39, name: "Law & Order", network: "NBC", day: "Monday", rating: 7, season: nil>, #<Show id: 38, name: "Rick and Morty", network: "Adult Swim", day: "Thursday", rating: 10, season: nil>, #<Show id: 40, name: "The Cleveland Show", network: "Fox", day: "Monday", rating: 2, season: nil>]
+            got: nil
+       
+       (compared using ==)
+     # ./spec/show_spec.rb:75:in `block (3 levels) in <top (required)>'
+
+Finished in 1.81 seconds (files took 1 second to load)
+10 examples, 5 failures
+
+Failed examples:
+
+rspec ./spec/show_spec.rb:44 # Show::most_popular_show returns the tv show with the highest rating
+rspec ./spec/show_spec.rb:56 # Show::least_popular_show returns the tv show with the lowest rating
+rspec ./spec/show_spec.rb:62 # Show::ratings_sum returns the sum of all the ratings of all the tv shows
+rspec ./spec/show_spec.rb:68 # Show::popular_shows returns an array of all of the shows with a rating above 5
+rspec ./spec/show_spec.rb:74 # Show::shows_by_alphabetical_order returns an array of all of the shows, listed in alphabetical order
+
