@@ -1,0 +1,4 @@
+
+Show
+  attributes
+    has data attributes given to it from a migration file
